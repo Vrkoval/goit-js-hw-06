@@ -1,13 +1,20 @@
-const inputElement = {
-    input: document.querySelector("#name-input"),
-    nameInput: document.querySelector("#name-output"),
-  };
-  
-  const changeValue = (event) => {
-    inputElement.nameInput.textContent = event.currentTarget.value;
-    if (inputElement.nameInput.textContent.length <= 0) {
-        inputElement.nameInput.textContent = "Anonymous";
+const inputElement =document.querySelector(" #validation-input");
+const makeFocus = (event) => {
+    inputElement.classList.add("invalid");
+    if (
+      event.currentTarget.value.length >= inputElement.attributes[2].value &&
+      event.currentTarget.value.length <= inputElement.attributes[2].value
+    ) {
+      inputElement.classList.replace("invalid", "valid");
     }
   };
+  const defineFocus = (event) => {
+    inputElement.classList.remove("invalid", "valid");
+  };
   
-  inputElement.input.addEventListener("input", changeValue);
+  inputElement.addEventListener("input", makeFocus);
+  inputElement.addEventListener("focus", makeFocus);
+  inputElement.addEventListener("blur", defineFocus);
+  
+
+  
