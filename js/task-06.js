@@ -1,4 +1,3 @@
-  
 const nameInput = document.getElementById("validation-input");
 nameInput.addEventListener("blur", onInputBlur);
 const countOfLetters = Number(nameInput.dataset.length);
