@@ -1,20 +1,13 @@
-const inputElement =document.querySelector(" #validation-input");
-const makeFocus = (event) => {
-    inputElement.classList.add("invalid");
-    if (
-      event.currentTarget.value.length >= inputElement.attributes[2].value &&
-      event.currentTarget.value.length <= inputElement.attributes[2].value
-    ) {
-      inputElement.classList.replace("invalid", "valid");
-    }
-  };
-  const defineFocus = (event) => {
-    inputElement.classList.remove("invalid", "valid");
-  };
   
-  inputElement.addEventListener("input", makeFocus);
-  inputElement.addEventListener("focus", makeFocus);
-  inputElement.addEventListener("blur", defineFocus);
-  
-
-  
+const nameInput = document.getElementById("validation-input");
+nameInput.addEventListener("blur", onInputBlur);
+const countOfLetters = Number(nameInput.dataset.length);
+function onInputBlur() {
+  if (nameInput.value.length === countOfLetters) {
+    nameInput.classList.add("valid");
+    nameInput.classList.remove("invalid");
+  } else {
+    nameInput.classList.remove("valid");
+    nameInput.classList.add("invalid");
+  }
+}
