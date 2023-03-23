@@ -1,5 +1,5 @@
 const inputElement = {
-    input: document.querySelector(""#validation-input""),
+    input: document.querySelector("#validation-input"),
     nameInput: document.querySelector("#name-output"),
   };
   
