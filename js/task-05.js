@@ -1,13 +1,14 @@
-const inputElement = {
-    input: document.querySelector("#validation-input"),
+const inputElem = {
+    input: document.querySelector("#name-input"),
     nameInput: document.querySelector("#name-output"),
   };
   
   const changeValue = (event) => {
-    inputElement.nameInput.textContent = event.currentTarget.value;
-    if (inputElement.nameInput.textContent.length <= 0) {
-        inputElement.nameInput.textContent = "Anonymous";
+    inputElem.nameInput.textContent = event.currentTarget.value;
+    console.log('inputElem');
+    if (inputElem.nameInput.textContent.length <= 0) {
+        inputElem.nameInput.textContent = "Anonymous";
     }
   };
   
-  inputElement.input.addEventListener("input", changeValue);
+  inputElem.input.addEventListener("input", changeValue);
